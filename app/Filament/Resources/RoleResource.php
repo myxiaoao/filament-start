@@ -2,28 +2,24 @@
 
 namespace App\Filament\Resources;
 
-use Filament\Forms;
-use Filament\Tables;
-use Filament\Resources\Form;
-use Filament\Resources\Table;
-use Filament\Resources\Resource;
-use Spatie\Permission\Models\Role;
-use Filament\Forms\Components\Card;
-use Filament\Tables\Columns\TextColumn;
-use Filament\Forms\Components\TextInput;
-use Filament\Tables\Actions\DeleteAction;
-use Illuminate\Database\Eloquent\Builder;
 use App\Filament\Resources\RoleResource\Pages;
-use Illuminate\Database\Eloquent\SoftDeletingScope;
-use App\Filament\Resources\RoleResource\RelationManagers;
 use App\Filament\Resources\RoleResource\RelationManagers\PermissionsRelationManager;
+use Filament\Forms\Components\Card;
 use Filament\Forms\Components\Select;
+use Filament\Forms\Components\TextInput;
+use Filament\Resources\Form;
+use Filament\Resources\Resource;
+use Filament\Resources\Table;
+use Filament\Tables;
+use Filament\Tables\Actions\DeleteAction;
+use Filament\Tables\Columns\TextColumn;
+use Spatie\Permission\Models\Role;
 
 class RoleResource extends Resource
 {
     protected static ?string $model = Role::class;
 
-    protected static ?string $navigationIcon = 'heroicon-s-cog';
+    protected static ?string $navigationIcon = 'heroicon-s-finger-print';
 
     protected static ?string $label = '角色';
 
@@ -31,7 +27,10 @@ class RoleResource extends Resource
 
     protected static ?string $navigationLabel = '角色管理';
 
-    public static function form(Form $form): Form {
+    protected static ?int $navigationSort = 2;
+
+    public static function form(Form $form): Form
+    {
         return $form
             ->schema([
                 Card::make()
@@ -54,7 +53,8 @@ class RoleResource extends Resource
             ]);
     }
 
-    public static function table(Table $table): Table {
+    public static function table(Table $table): Table
+    {
         return $table
             ->columns([
                 TextColumn::make('id')->sortable(),
@@ -79,7 +79,8 @@ class RoleResource extends Resource
             ]);
     }
 
-    public static function getRelations(): array {
+    public static function getRelations(): array
+    {
         return [
             PermissionsRelationManager::class,
         ];
@@ -88,9 +89,9 @@ class RoleResource extends Resource
     public static function getPages(): array
     {
         return [
-            'index' => Pages\ListRoles::route('/'),
+            'index'  => Pages\ListRoles::route('/'),
             'create' => Pages\CreateRole::route('/create'),
-            'edit' => Pages\EditRole::route('/{record}/edit'),
+            'edit'   => Pages\EditRole::route('/{record}/edit'),
         ];
     }
 }

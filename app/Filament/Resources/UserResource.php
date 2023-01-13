@@ -43,6 +43,8 @@ class UserResource extends Resource
 
     protected static ?string $navigationLabel = '用户管理';
 
+    protected static ?int $navigationSort = 1;
+
     // protected static bool $shouldRegisterNavigation = false;
 
     protected static function getNavigationBadge(): ?string

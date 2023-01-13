@@ -2,18 +2,15 @@
 
 namespace App\Filament\Resources;
 
-use Filament\Forms;
-use Filament\Tables;
-use Filament\Resources\Form;
-use Filament\Resources\Table;
-use Filament\Resources\Resource;
-use Spatie\Permission\Models\Permission;
-use Illuminate\Database\Eloquent\Builder;
-use Illuminate\Database\Eloquent\SoftDeletingScope;
 use App\Filament\Resources\PermissionResource\Pages;
 use Filament\Forms\Components\Card;
 use Filament\Forms\Components\TextInput;
+use Filament\Resources\Form;
+use Filament\Resources\Resource;
+use Filament\Resources\Table;
+use Filament\Tables;
 use Filament\Tables\Columns\TextColumn;
+use Spatie\Permission\Models\Permission;
 
 class PermissionResource extends Resource
 {
@@ -27,7 +24,10 @@ class PermissionResource extends Resource
 
     protected static ?string $navigationLabel = '权限管理';
 
-    public static function form(Form $form): Form {
+    protected static ?int $navigationSort = 3;
+
+    public static function form(Form $form): Form
+    {
         return $form
             ->schema([
                 Card::make()
@@ -44,7 +44,8 @@ class PermissionResource extends Resource
             ]);
     }
 
-    public static function table(Table $table): Table {
+    public static function table(Table $table): Table
+    {
         return $table
             ->columns([
                 TextColumn::make('id')->sortable(),
