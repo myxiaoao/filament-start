@@ -65,7 +65,8 @@ class User extends Authenticatable implements FilamentUser
         'profile_photo_url',
     ];
 
-    public function canAccessFilament(): bool {
-        return str_ends_with($this->email, '@admin.com' );
+    public function canAccessFilament(): bool
+    {
+        return (bool)$this->is_admin;
     }
 }
