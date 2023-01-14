@@ -2,6 +2,7 @@
 
 namespace App\Providers;
 
+use App\Filament\Pages\Profile;
 use App\Filament\Resources\PermissionResource;
 use App\Filament\Resources\RoleResource;
 use App\Filament\Resources\UserResource;
@@ -34,22 +35,12 @@ class FilamentServiceProvider extends ServiceProvider
                 app(Vite::class)('resources/css/filament.css'),
             );
 
-            if (auth()->user()
-                && auth()->user()->is_admin === 1
-                && auth()->user()->hasAnyRole(['super-admin', 'admin'])) {
+            if (auth()->user() && auth()->user()->is_admin === 1) {
                 Filament::registerUserMenuItems([
                     UserMenuItem::make()
-                        ->label('用户管理')
-                        ->url(UserResource::getUrl())
-                        ->icon('heroicon-s-users'),
-                    UserMenuItem::make()
-                        ->label('角色管理')
-                        ->url(RoleResource::getUrl())
-                        ->icon('heroicon-s-identification'),
-                    UserMenuItem::make()
-                        ->label('权限管理')
-                        ->url(PermissionResource::getUrl())
-                        ->icon('heroicon-s-key'),
+                        ->label('个人设置')
+                        ->url(Profile::getUrl())
+                        ->icon('heroicon-s-user'),
                 ]);
             }
         });
