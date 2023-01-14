@@ -2,13 +2,13 @@
 
 namespace App\Providers;
 
-use Filament\Facades\Filament;
-use Illuminate\Foundation\Vite;
-use Filament\Navigation\UserMenuItem;
-use Illuminate\Support\ServiceProvider;
+use App\Filament\Resources\PermissionResource;
 use App\Filament\Resources\RoleResource;
 use App\Filament\Resources\UserResource;
-use App\Filament\Resources\PermissionResource;
+use Filament\Facades\Filament;
+use Filament\Navigation\UserMenuItem;
+use Illuminate\Foundation\Vite;
+use Illuminate\Support\ServiceProvider;
 
 class FilamentServiceProvider extends ServiceProvider
 {
@@ -45,7 +45,7 @@ class FilamentServiceProvider extends ServiceProvider
                     UserMenuItem::make()
                         ->label('角色管理')
                         ->url(RoleResource::getUrl())
-                        ->icon('heroicon-s-cog'),
+                        ->icon('heroicon-s-identification'),
                     UserMenuItem::make()
                         ->label('权限管理')
                         ->url(PermissionResource::getUrl())

@@ -7,6 +7,10 @@ use Filament\Widgets\StatsOverviewWidget\Card;
 
 class StatsOverview extends BaseWidget
 {
+    protected static ?int $sort = 2;
+
+    protected int|string|array $columnSpan = '2';
+
     protected function getCards(): array
     {
         return [

@@ -2,9 +2,10 @@
 
 namespace App\Policies;
 
+use App\Models\Permission;
 use App\Models\User;
-use Spatie\Permission\Models\Permission;
 use Illuminate\Auth\Access\HandlesAuthorization;
+use Illuminate\Auth\Access\Response;
 
 class PermissionPolicy
 {
@@ -13,42 +14,46 @@ class PermissionPolicy
     /**
      * Determine whether the user can view any models.
      *
-     * @param  \App\Models\User  $user
-     * @return \Illuminate\Auth\Access\Response|bool
+     * @param User $user
+     * @return Response|bool
      */
-    public function viewAny(User $user) {
+    public function viewAny(User $user)
+    {
         return $user->hasAnyRole(['super-admin', 'admin']);
     }
 
     /**
      * Determine whether the user can create models.
      *
-     * @param  \App\Models\User  $user
-     * @return \Illuminate\Auth\Access\Response|bool
+     * @param User $user
+     * @return Response|bool
      */
-    public function create(User $user) {
+    public function create(User $user)
+    {
         return $user->hasAnyRole(['super-admin', 'admin']);
     }
 
     /**
      * Determine whether the user can update the model.
      *
-     * @param  \App\Models\User  $user
-     * @param  \Spatie\Permission\Models\Permission  $permission
-     * @return \Illuminate\Auth\Access\Response|bool
+     * @param User $user
+     * @param Permission $permission
+     * @return Response|bool
      */
-    public function update(User $user, Permission $permission) {
+    public function update(User $user, Permission $permission)
+    {
         return $user->hasAnyRole(['super-admin', 'admin']);
     }
 
     /**
      * Determine whether the user can delete the model.
      *
-     * @param  \App\Models\User  $user
-     * @param  Spatie\Permission\Models\Permission  $permission
-     * @return \Illuminate\Auth\Access\Response|bool
+     * @param User $user
+     * @param Permission $permission
+     * @return Response|bool
      */
-    public function delete(User $user, Permission $permission) {
+    public function delete(User $user, Permission $permission)
+    {
         return $user->hasAnyRole(['super-admin', 'admin']);
     }
 }

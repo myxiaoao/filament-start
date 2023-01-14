@@ -76,15 +76,15 @@ return [
 
         'toolbar_buttons' => [
             'attach_files' => '附件',
-            'bold' => '加粗',
-            'bullet_list' => '普通列表',
-            'code_block' => '代码',
-            'edit' => '编辑',
-            'italic' => '斜体',
-            'link' => '链接',
+            'bold'         => '加粗',
+            'bullet_list'  => '普通列表',
+            'code_block'   => '代码',
+            'edit'         => '编辑',
+            'italic'       => '斜体',
+            'link'         => '链接',
             'ordered_list' => '数字列表',
-            'preview' => '预览',
-            'strike' => '文字中线',
+            'preview'      => '预览',
+            'strike'       => '文字中线',
         ],
 
     ],
@@ -138,7 +138,7 @@ return [
             'link' => [
 
                 'buttons' => [
-                    'link' => '链接',
+                    'link'   => '链接',
                     'unlink' => '取消链接',
                 ],
 
@@ -152,19 +152,19 @@ return [
 
         'toolbar_buttons' => [
             'attach_files' => '附件',
-            'blockquote' => '引用',
-            'bold' => '加粗',
-            'bullet_list' => '普通列表',
-            'code_block' => '代码',
-            'h1' => '标题',
-            'h2' => '标题',
-            'h3' => '副标题',
-            'italic' => '斜体',
-            'link' => '链接',
+            'blockquote'   => '引用',
+            'bold'         => '加粗',
+            'bullet_list'  => '普通列表',
+            'code_block'   => '代码',
+            'h1'           => '标题',
+            'h2'           => '标题',
+            'h3'           => '副标题',
+            'italic'       => '斜体',
+            'link'         => '链接',
             'ordered_list' => '数字列表',
-            'redo' => '下一步',
-            'strike' => '文字中线',
-            'undo' => '上一步',
+            'redo'         => '下一步',
+            'strike'       => '文字中线',
+            'undo'         => '上一步',
         ],
 
     ],
@@ -194,7 +194,7 @@ return [
         ],
 
         'boolean' => [
-            'true' => '是',
+            'true'  => '是',
             'false' => '否',
         ],
 
@@ -202,7 +202,7 @@ return [
 
         'no_search_results_message' => '没有选项匹配您的搜索',
 
-        'placeholder' => '选择选项',
+        'placeholder' => '请选择...',
 
         'searching_message' => '搜索中...',
 

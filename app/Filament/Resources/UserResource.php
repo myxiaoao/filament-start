@@ -94,7 +94,6 @@ class UserResource extends Resource
                             ->label('角色')
                             ->relationship('roles', 'desc')
                             ->columns(2)
-                            ->helperText('只能选择一个角色!')
                             ->required()
                     ])
             ]);
