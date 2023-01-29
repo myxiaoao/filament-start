@@ -38,6 +38,7 @@ class Profile extends Page
         $this->form->fill([
             'name'  => auth()->user()->name,
             'email' => auth()->user()->email,
+            'phone' => auth()->user()->phone,
         ]);
     }
 
@@ -89,6 +90,9 @@ class Profile extends Page
                     TextInput::make('name')
                         ->label('名称')
                         ->required(),
+                    TextInput::make('phone')
+                        ->label('手机号码')
+                        ->disabled(),
                     TextInput::make('email')
                         ->label('邮箱')
                         ->disabled(),

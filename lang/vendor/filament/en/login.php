@@ -20,6 +20,10 @@ return [
             'label' => 'Email address',
         ],
 
+        'phone' => [
+            'label' => 'Phone',
+        ],
+
         'password' => [
             'label' => 'Password',
         ],
@@ -31,7 +35,7 @@ return [
     ],
 
     'messages' => [
-        'failed' => 'These credentials do not match our records.',
+        'failed'    => 'These credentials do not match our records.',
         'throttled' => 'Too many login attempts. Please try again in :seconds seconds.',
     ],
 

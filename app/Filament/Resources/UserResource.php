@@ -70,6 +70,13 @@ class UserResource extends Resource
                         Toggle::make('is_admin')
                             ->label('管理员')
                             ->required(),
+                        TextInput::make('phone')
+                            ->label('手机号码')
+                            ->unique(ignoreRecord: true)
+                            ->tel()
+                            ->telRegex('/1[3-9]\d{9}$/')
+                            ->required()
+                            ->length(11),
                         TextInput::make('email')
                             ->label('邮箱')
                             ->email()
@@ -116,6 +123,11 @@ class UserResource extends Resource
                     ->label('角色')
                     ->icon('heroicon-s-identification')
                     ->toggleable()
+                    ->sortable(),
+                TextColumn::make('phone')
+                    ->label('手机')
+                    ->searchable()
+                    ->icon('heroicon-s-device-mobile')
                     ->sortable(),
                 TextColumn::make('email')
                     ->label('邮箱')

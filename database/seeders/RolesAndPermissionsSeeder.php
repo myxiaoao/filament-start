@@ -3,13 +3,11 @@
 namespace Database\Seeders;
 
 use App\Models\User;
-use Illuminate\Support\Str;
 use Illuminate\Database\Seeder;
-use Spatie\Permission\Models\Role;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Str;
 use Spatie\Permission\Models\Permission;
-use Spatie\Permission\PermissionRegistrar;
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+use Spatie\Permission\Models\Role;
 
 class RolesAndPermissionsSeeder extends Seeder
 {
@@ -92,12 +90,15 @@ class RolesAndPermissionsSeeder extends Seeder
             $adminPermission1,
         ]);
 
+        $faker = \Faker\Factory::create('zh_CN');
+
         // CREATE ADMINS & USERS
         User::create([
             'name'              => '超级管理员',
             'is_admin'          => 1,
             'email'             => 'super@admin.com',
             'email_verified_at' => now(),
+            'phone'             => '18800000001',
             'password'          => Hash::make('password'),
             'remember_token'    => Str::random(10),
         ])->assignRole($superAdminRole);
@@ -107,6 +108,7 @@ class RolesAndPermissionsSeeder extends Seeder
             'is_admin'          => 1,
             'email'             => 'admin@admin.com',
             'email_verified_at' => now(),
+            'phone'             => $faker->phoneNumber,
             'password'          => Hash::make('password'),
             'remember_token'    => Str::random(10),
         ])->assignRole($adminRole);
@@ -117,16 +119,18 @@ class RolesAndPermissionsSeeder extends Seeder
             'is_admin'          => 1,
             'email'             => 'developer@admin.com',
             'email_verified_at' => now(),
+            'phone'             => $faker->phoneNumber,
             'password'          => Hash::make('password'),
             'remember_token'    => Str::random(10),
         ])->assignRole($developerRole);
 
         for ($i = 1; $i < 50; $i++) {
             User::create([
-                'name'              => '测试用户 ' . $i,
+                'name'              => '测试用户-' . $faker->name,
                 'is_admin'          => 0,
-                'email'             => 'test' . $i . '@test.com',
+                'email'             => $faker->safeEmail,
                 'email_verified_at' => now(),
+                'phone'             => $faker->phoneNumber,
                 'password'          => Hash::make('password'), // password
                 'remember_token'    => Str::random(10),
                 'created_at'        => now()->subMonths(random_int(0, 10))
