@@ -26,24 +26,24 @@ class RolesAndPermissionsSeeder extends Seeder
 
         // USER MODEL
         $userPermission1 = Permission::create(['name' => 'create-user', 'desc' => '创建用户']);
-        $userPermission2 = Permission::create(['name' => 'read-user', 'desc' => '查看用户']);
+        $userPermission2 = Permission::create(['name' => 'view-user', 'desc' => '查看用户']);
         $userPermission3 = Permission::create(['name' => 'update-user', 'desc' => '更新用户']);
         $userPermission4 = Permission::create(['name' => 'delete-user', 'desc' => '删除用户']);
 
         // ROLE MODEL
         $rolePermission1 = Permission::create(['name' => 'create-role', 'desc' => '创建角色']);
-        $rolePermission2 = Permission::create(['name' => 'read-role', 'desc' => '查看角色']);
+        $rolePermission2 = Permission::create(['name' => 'view-role', 'desc' => '查看角色']);
         $rolePermission3 = Permission::create(['name' => 'update-role', 'desc' => '更新角色']);
         $rolePermission4 = Permission::create(['name' => 'delete-role', 'desc' => '删除角色']);
 
         // PERMISSION MODEL
         $permission1 = Permission::create(['name' => 'create-permission', 'desc' => '创建权限']);
-        $permission2 = Permission::create(['name' => 'read-permission', 'desc' => '查看权限']);
+        $permission2 = Permission::create(['name' => 'view-permission', 'desc' => '查看权限']);
         $permission3 = Permission::create(['name' => 'update-permission', 'desc' => '更新权限']);
         $permission4 = Permission::create(['name' => 'delete-permission', 'desc' => '删除权限']);
 
         // ADMINS
-        $adminPermission1 = Permission::create(['name' => 'read-admin', 'desc' => '查看管理']);
+        $adminPermission1 = Permission::create(['name' => 'view-admin', 'desc' => '查看管理']);
         $adminPermission2 = Permission::create(['name' => 'update-admin', 'desc' => '更新管理']);
 
         // CREATE ROLES
