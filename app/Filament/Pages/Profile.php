@@ -75,7 +75,7 @@ class Profile extends Page
         return Dashboard::getUrl();
     }
 
-    protected function getBreadcrumbs(): array
+    public function getBreadcrumbs(): array
     {
         return [
             url()->current() => '个人设置',

@@ -7,7 +7,7 @@
                 更新
             </x-filament::button>
 
-            <x-filament::button type="button" color="secondary" tag="a" :href="$this->cancel_button_url">
+            <x-filament::button type="button" color="gray" tag="a" :href="$this->cancel_button_url">
                 取消
             </x-filament::button>
         </div>

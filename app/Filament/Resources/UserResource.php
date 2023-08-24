@@ -14,9 +14,9 @@ use Filament\Forms\Components\CheckboxList;
 use Filament\Forms\Components\TextInput;
 use Filament\Forms\Components\Toggle;
 use Filament\Pages\Page;
-use Filament\Resources\Form;
+use Filament\Forms\Form;
 use Filament\Resources\Resource;
-use Filament\Resources\Table;
+use Filament\Tables\Table;
 use Filament\Tables;
 use Filament\Tables\Actions\DeleteAction;
 use Filament\Tables\Actions\DeleteBulkAction;
@@ -47,7 +47,7 @@ class UserResource extends Resource
 
     // protected static bool $shouldRegisterNavigation = false;
 
-    protected static function getNavigationBadge(): ?string
+    public static function getNavigationBadge(): ?string
     {
         return static::getModel()::count();
     }
@@ -127,12 +127,12 @@ class UserResource extends Resource
                 TextColumn::make('phone')
                     ->label('手机')
                     ->searchable()
-                    ->icon('heroicon-s-device-mobile')
+                    ->icon('heroicon-m-device-phone-mobile')
                     ->sortable(),
                 TextColumn::make('email')
                     ->label('邮箱')
                     ->searchable()
-                    ->icon('heroicon-s-mail')
+                    ->icon('heroicon-m-envelope')
                     ->sortable(),
                 TextColumn::make('created_at')
                     ->description(fn(User $record): string => $record->created_at)

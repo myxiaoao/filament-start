@@ -17,13 +17,13 @@ class StatsOverview extends BaseWidget
             Card::make('流量统计', '192.1k')
                 ->description('32k increase')
                 ->chart([7, 2, 10, 3, 15, 4, 17])
-                ->descriptionIcon('heroicon-s-trending-up'),
+                ->descriptionIcon('heroicon-m-arrow-trending-up'),
             Card::make('转换比例', '21%')
                 ->description('7% increase')
-                ->descriptionIcon('heroicon-s-trending-down'),
+                ->descriptionIcon('heroicon-m-arrow-trending-down'),
             Card::make('平均在线', '3:12')
                 ->description('3% increase')
-                ->descriptionIcon('heroicon-s-trending-up'),
+                ->descriptionIcon('heroicon-m-arrow-trending-up'),
         ];
     }
 }

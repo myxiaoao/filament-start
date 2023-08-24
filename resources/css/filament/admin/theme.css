@@ -1,0 +1,7 @@
+@import '../../../../vendor/filament/filament/resources/css/theme.css';
+@import 'lxgw-wenkai-lite-webfont/style.css';
+@import "custom.css";
+
+@config './tailwind.config.js';
+
+
