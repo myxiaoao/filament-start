@@ -5,6 +5,8 @@ namespace App\Providers;
 use App\Filament\Pages\Profile;
 use Filament\Facades\Filament;
 use Filament\Navigation\MenuItem;
+use Filament\Tables\Enums\FiltersLayout;
+use Filament\Tables\Table;
 use Illuminate\Support\ServiceProvider;
 
 class FilamentServiceProvider extends ServiceProvider
@@ -35,6 +37,12 @@ class FilamentServiceProvider extends ServiceProvider
                         ->icon('heroicon-s-user'),
                 ]);
             }
+        });
+
+        Table::configureUsing(function (Table $table): void {
+            $table
+                ->filtersLayout(FiltersLayout::AboveContentCollapsible)
+                ->paginationPageOptions([10, 25, 50])->striped();
         });
     }
 }

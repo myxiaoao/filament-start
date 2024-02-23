@@ -4,4 +4,114 @@
 
 @config './tailwind.config.js';
 
+.fi-body {
+    background-color: #f1f5f9;
+}
+
+.fi-sidebar-item-label {
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+    font-weight: 500;
+}
+
+.fi-sidebar-item-icon {
+    width: 1rem;
+    height: 1rem;
+}
+
+.fi-sidebar-item-active .fi-sidebar-item-button,
+.fi-sidebar-item-button:hover {
+    background-color: #f8f9fa;
+}
+
+.fi-sidebar-group-items {
+    row-gap: 0.5rem;
+}
+
+.fi-main {
+    padding-left: 0 !important;
+    padding-right: 1rem !important;
+
+    .fi-form > div:not(:has(section)) {
+        background-color: white;
+        padding: 30px 50px;
+        border-radius: 0.25rem;
+        box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.05);
+        background-clip: border-box;
+    }
+
+    .fi-form > div:has(section) ~ .fi-form-actions {
+        width: calc((100% - 2 * 1.5rem) / 3 * 2 + 1.5rem);
+        margin-left: calc((100% - 2 * 1.5rem) / 3 + 1.5rem);
+    }
+}
+
+.fi-ta-table thead {
+    background-color: white;
+}
+
+.divide-gray-200 > :not([hidden]) ~ :not([hidden]) {
+    --tw-divide-opacity: 1;
+    border-color: #f2f5f9;
+}
+
+.fi-pagination span,
+.fi-select-input {
+    color: #cbd5e1 !important;
+}
+
+.fi-sidebar-group-label {
+    padding-left: 26px;
+    color: #a1a5b7;
+}
+
+.fi-header-heading {
+    margin-top: 20px;
+}
+
+
+.fi-simple-page .fi-form, .fi-in-repeatable-item {
+    box-shadow: none;
+}
+
+:is(.dark) .fi-form {
+    background-color: #171719;
+}
+
+.fi-simple-main {
+    border-radius: 0.25rem !important;
+}
+
+.fi-section,
+.fi-ta-ctn,
+.fi-section-content,
+.fi-btn,
+.filepond--root,
+.fi-wi-stats-overview-stat {
+    @apply rounded;
+}
+
+.fi-section-content {
+    @apply ring-0;
+}
+
+.fi-fo-repeater-item {
+    @apply rounded-none ring-0 border-t-0;
+}
+
+.fi-input-wrp {
+    @apply rounded-sm;
+}
+
+.fi-ta-ctn,
+.fi-section,
+.fi-simple-main,
+.fi-wi-stats-overview-stat {
+    @apply ring-0;
+}
+
+.fi-logo {
+    @apply h-6;
+}
+
 
